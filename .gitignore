@@ -1,2 +1,5 @@
-#Ignore virtual env dir
+# Ignore virtual env dir
 venv/
+
+# Ignore pyc files
+*.pyc
