@@ -1,0 +1,13 @@
+            {% if destinationURL == '/' %}
+              {% set label = 'Home' %}
+            {% else %}
+              {% set label = destinationURL %}
+              {% set destinationURL = '/' + destinationURL %}
+            {% endif %}
+
+            {% if request.path == destinationURL %}
+              <a class="nav-link active" href="{{ destinationURL }}">{{ label | capitalize }}</a>
+            {% else %}
+              <a class="nav-link" href="{{ destinationURL }}">{{ label | capitalize }}</a>
+            {% endif %}
+

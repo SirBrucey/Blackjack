@@ -13,7 +13,4 @@ os.chdir(APP_HOME)
 
 from blackjack import app
 
-handler = FileHandler("/var/log/blackjack/blackjack.log")
-handler.setFormatter(Formatter("[%(asctime)s | %(levelname)s] %(message)s"))
-app.logger.addHandler(handler)
 application = app

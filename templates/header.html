@@ -1,17 +1,23 @@
-<!doctype html>
-<title>Blackjack</title>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-<div class=page>
-  <h1>Blackjack</h1>
-  <div class=metanav>
-  {% if not session.logged_in %}
-    <a href="{{ url_for('login') }}">log in</a>
-  {% else %}
-    <a href="{{ url_for('logout') }}">log out</a>
-  {% endif %}
-  </div>
-  {% for message in get_flashed_messages() %}
-    <div class=flash>{{ message }}</div>
-  {% endfor %}
-  {% block body %}{% endblock %}
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>Blackjack</title>
+
+  <!-- Core Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    
+  <!-- My CSS -->
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+
+{% block body %}{% endblock %}
+{% include "footer.html" %}

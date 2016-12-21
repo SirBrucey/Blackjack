@@ -1,0 +1,22 @@
+
+      <div class="masthead clearfix">
+        <div class="inner">
+        {% for message in get_flashed_messages() %}
+          <h3 class="masthead-brand">{{ message }}</h3>
+        {% endfor %}
+
+          <nav class="nav nav-masthead">
+
+            {% set destinationURL='/' %}{% include "navlinks.html" %}
+
+          {% if not session.logged_in %}
+            {% set destinationURL='login' %}{% include "navlinks.html" %}
+            {% set destinationURL='register' %}{% include "navlinks.html" %}
+          {% else %}
+            {% set destinationURL='logout' %}{% include "navlinks.html" %}
+          {% endif %}
+
+          </nav>
+        </div>
+      </div>
+
